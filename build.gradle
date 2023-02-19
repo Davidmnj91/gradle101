@@ -1,19 +1,17 @@
-plugins {
-    id 'java'
+allprojects {
+    group 'com.example.multi-module-gradle'
+    version '1.0-SNAPSHOT'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+subprojects {
 
-repositories {
-    mavenCentral()
-}
+    // common plugins
+    apply plugin: 'java'
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
+    // common repositories
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
 
-test {
-    useJUnitPlatform()
 }
