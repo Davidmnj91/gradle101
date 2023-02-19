@@ -1,0 +1,5 @@
+rootProject.name = 'gradle101'
+
+include 'modules:mod1'
+include 'modules:mod2'
+include 'applications:app'
