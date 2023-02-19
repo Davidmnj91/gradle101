@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.example'
@@ -10,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    compileOnly project(':modules:mod1')
+    compileOnly project(':modules:mod2')
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
