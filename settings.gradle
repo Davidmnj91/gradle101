@@ -3,3 +3,16 @@ rootProject.name = 'gradle101'
 include 'modules:mod1'
 include 'modules:mod2'
 include 'applications:app'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create('libs') {
+            version('junit-version', '5.8.1')
+
+            library('junit-api', 'org.junit.jupiter', 'junit-jupiter-api').versionRef('junit-version')
+            library('junit-engine', 'org.junit.jupiter', 'junit-jupiter-engine').versionRef('junit-version')
+
+            bundle('junit', ['junit-api', 'junit-engine'])
+        }
+    }
+}
